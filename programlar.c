@@ -4,7 +4,7 @@
 void sayisiralamak() {
 	int b; //sayilar arrayindeki sayý adeti.
 	jump1:
-	printf("Girmek istediginiz sayi adetini girin: ");
+	printf("\nGirmek istediginiz sayi adetini girin: ");
 	fflush(stdout);
 	scanf("%d", &b);
 	int sayilar[b];
@@ -64,7 +64,7 @@ void kokbulmak(){
 	float x1,x2;
 	int cikis;
 	jump1:
-	printf("ax^2 + bx + c seklindeki denklemin: \n");
+	printf("\nax^2 + bx + c seklindeki denklemin: \n");
 	fflush(stdout);
 	printf("a = ");
 	fflush(stdout);
@@ -105,7 +105,8 @@ void kokbulmak(){
 
 int main() {
 
-	printf("\n0-Programdan cikmak.\n"
+	printf("\nThe Math Program by Hazar Belge\n\n"
+			"0-Programdan cikmak.\n"
 			"1-2.dereceden bir bilinmeyenli denklem cozmek.\n"
 			"2-Girilen sayilari siralamak.\n\n");
 	fflush(stdout);
