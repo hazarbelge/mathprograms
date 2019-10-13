@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
+//the functions "fflush(stdout)" used just for eclipse, you can ignore them with in your code.
+
 void sayisiralamak() {
-	int b; //sayilar arrayindeki sayý adeti.
+	int b; //sayilar arrayindeki sayÄ± adeti.
 	jump1:
 	printf("\nGirmek istediginiz sayi adetini girin: ");
 	fflush(stdout);
