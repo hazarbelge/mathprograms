@@ -5,4 +5,8 @@ Sorts the numbers.
 
 Gets factorial.
 
+Combination.
+
+Calculates the areas of geometric shapes.
+
 For now of course.
