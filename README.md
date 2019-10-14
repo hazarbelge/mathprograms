@@ -3,6 +3,6 @@ Calculates the roots of equation which has one unknown variable from second degr
 
 Sorts the numbers.
 
-Get factorial.
+Gets factorial.
 
 For now of course.
