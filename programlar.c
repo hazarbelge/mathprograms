@@ -1,11 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-//the functions "fflush(stdout)" used just for eclipse, you can ignore them with in your code.
-
 void sayisiralamak() {
-	int b; //sayilar arrayindeki sayÄ± adeti.
-	jump1:
+	int b; //sayilar arrayindeki sayý adeti.
 	printf("\nGirmek istediginiz sayi adetini girin: ");
 	fflush(stdout);
 	scanf("%d", &b);
@@ -41,7 +38,7 @@ void sayisiralamak() {
 		}
 	}
 	int cikis;
-	jump2:
+	jump:
 	printf("\nCikmak istiyorsaniz 0'a, tekrardan siralamak istiyorsaniz 1'e, "
 			"ana menuye donmek istiyorsaniz 2'ye basin.");
 	fflush(stdout);
@@ -51,12 +48,13 @@ void sayisiralamak() {
 	case 0:
 		break;
 	case 1:
-		goto jump1;
+		sayisiralamak();
+		break;
 	case 2:
-		main();
+		ana_menu();
 		break;
 	default:
-		goto jump2;
+		goto jump;
 	}
 }
 
@@ -65,7 +63,6 @@ void kokbulmak(){
 	float delta;
 	float x1,x2;
 	int cikis;
-	jump1:
 	printf("\nax^2 + bx + c seklindeki denklemin: \n");
 	fflush(stdout);
 	printf("a = ");
@@ -86,7 +83,7 @@ void kokbulmak(){
 	fflush(stdout);
 	printf("x2 = %f \n \n", x2);
 	fflush(stdout);
-	jump2:
+	jump:
 	printf("\nCikmak istiyorsaniz 0'a, tekrardan kok bulmak istiyorsaniz 1'e, "
 			"ana menuye donmek istiyorsaniz 2'ye basin.");
 	fflush(stdout);
@@ -96,21 +93,61 @@ void kokbulmak(){
 	case 0:
 		break;
 	case 1:
-		goto jump1;
+		kokbulmak();
+		break;
 	case 2:
-		main();
+		ana_menu();
 		break;
 	default:
-		goto jump2;
+		goto jump;
 	}
 }
 
-int main() {
+void faktoriyel(){
 
+	int i,a;
+	long long int sonuc = 1;
+	printf("\nFaktoriyelini almak istediginiz sayiyi girin: ");
+	fflush(stdout);
+	scanf("%d", &a);
+	for(i=1; i<a+1; i++){
+
+		sonuc = sonuc*i;
+
+	}
+	printf("%d! = %lld\n",a,sonuc);
+	fflush(stdout);
+	jump:
+	printf("\nCikmak istiyorsaniz 0'a, tekrardan faktoriyel almak istiyorsaniz 1'e, "
+				"ana menuye donmek istiyorsaniz 2'ye basin.");
+	fflush(stdout);
+	int cikis;
+	scanf("%d", &cikis);
+	switch (cikis){
+
+	case 0:
+		break;
+	case 1:
+		faktoriyel();
+		break;
+	case 2:
+		ana_menu();
+		break;
+	default:
+		goto jump;
+	}
+
+
+}
+
+void ana_menu() {
+
+	jump:
 	printf("\nThe Math Program by Hazar Belge\n\n"
 			"0-Programdan cikmak.\n"
 			"1-2.dereceden bir bilinmeyenli denklem cozmek.\n"
-			"2-Girilen sayilari siralamak.\n\n");
+			"2-Girilen sayilari siralamak.\n"
+			"3-Faktoriyel hesaplamak.\n\n");
 	fflush(stdout);
 	printf("Yapmak istediginiz islem: ");
 	fflush(stdout);
@@ -126,7 +163,16 @@ int main() {
 	case 2:
 		sayisiralamak();
 		break;
+	case 3:
+		faktoriyel();
+		break;
 	default:
-		return 0;
+        goto jump;
 	}
+}
+
+int main() {
+
+	ana_menu();
+
 }
